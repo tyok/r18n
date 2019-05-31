@@ -251,8 +251,9 @@ describe R18n::I18n do
   end
 
   it 'returns marshalizable values' do
-    i18n    = R18n::I18n.new('en', DIR, off_filters: :untranslated,
-                                        on_filters:  :untranslated_html)
+    i18n = R18n::I18n.new(
+      'en', DIR, off_filters: :untranslated, on_filters: :untranslated_html
+    )
     demarsh = Marshal.load(Marshal.dump(i18n.t.one))
 
     expect(i18n.t.one).to        eq(demarsh)

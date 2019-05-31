@@ -52,7 +52,7 @@ ActiveSupport.on_load(:after_initialize) do
     i18n = R18n::I18n.new(
       locale, R18n.default_places,
       off_filters: :untranslated,
-      on_filters:  :untranslated_bash
+      on_filters: :untranslated_bash
     )
     R18n.set(i18n)
   else
